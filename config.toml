@@ -1,0 +1,8 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'bencedesativablog'
+theme = 'myTheme'
+
+[Params]
+favicon = "favicon.svg"
+navbarIcon = "favicon.svg"

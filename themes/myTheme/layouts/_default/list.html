@@ -1,0 +1,26 @@
+{{ define "main" }}  
+<div>
+    <!--<div id="site-title">
+        <div>
+            This is a
+            <!- -really- -> badly written website to host my vuln writeups. I might update it later to make
+            it not
+            be
+            an
+            eye sore. Until then, ¯\_(ツ)_/¯!
+        </div>
+    </div>!-->
+    <div id=introduction>
+        ./vulns-view
+    </div>
+    <div id=writeups-list-container>
+        <ul id="writeups-list" class="no-bullets">  
+            {{ range .Pages }}  
+            <li class="writeups-list-item">=>
+                <a href="{{ .RelPermalink }}" class="vuln-writeup-link">{{ .Title }}</a>
+            </li>  
+            {{ end }}  
+        </ul>  
+    </div>
+</div>
+{{ end }}  
