@@ -1,8 +1,27 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = 'bencedesativablog'
+title = 'Can Acar'
 theme = 'myTheme'
 
 [Params]
 favicon = "favicon.svg"
 navbarIcon = "favicon.svg"
+
+# Navigation Bar
+[menu]
+[[menu.navbar]]
+    name = "Home"
+    url = "/"
+    weight = 1
+[[menu.navbar]]
+    name = "Vulns"
+    url = "/vulns"
+    weight = 2
+[[menu.navbar]]
+    name = "Github"
+    url = "/GITHUB_LINK"
+    weight = 3
+[[menu.navbar]]
+    name = "Contact"
+    url = "/contact"
+    weight = 4

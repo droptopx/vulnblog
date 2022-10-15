@@ -1,16 +1,48 @@
 {{ define "main" }}
-  <header class="homepage-header">
-    <h1>{{.Title}}</h1>
+<!--<header class="homepage-header">
+    <h1 class="introduction">{{.Title}}</h1>
     {{ with .Params.subtitle }}
     <span class="subtitle">{{.}}</span>
     {{ end }}
-  </header>
-  <div class="homepage-content">
-    {{.Content}}
+  </header>-->
+<div class="homepage-content">
+  <!--<div class="homepage-text-over-logo">aaa</div>-->
+  <!--<div class="typing">
+    <div class="typing-effect">
+      Typing effect for text
+    </div>
+  </div>-->
+
+  <div class="homepage-intro">
+
   </div>
-  <div>
-    {{ range first 10 .Site.RegularPages }}
-        {{ .Render "summary"}}
-    {{ end }}
+
+  <div class="big-greeting">
+    <div class="bio">
+      Hi. I'm Can Acar.
+      <br>
+      I'm a high school student interested in software development and music
+    </div>
+    <div class="flex-item">
+      <canvas id="c"></canvas>
+      <!--<img id="homepage-logo" class="drop-shadow" src="/homepage_logo.svg">-->
+    </div>
   </div>
+
+  <!--<div class="homepage-heading">
+    What is this page about?
+  </div>
+  <div class="homepage-body">
+    This site will mainly function as a personal portfolio website and a blog for security research.
+  </div>-->
+  <div class="medium-greeting">
+    <br>This site will mainly function as a personal portfolio website and a blog for security
+      research.<br> <br>  You can find my vuln write-ups <a href="/vulns" class="colored-link">here</a>.
+  </div>
+</div>
+<div>
+  {{ range .Site.RegularPages }}
+  {{ .Render "summary"}}
+  {{ end }}
+</div>
 {{ end }}

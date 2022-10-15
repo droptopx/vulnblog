@@ -1,6 +1,6 @@
-recordedTopScroll = 0
-hamMenu = document.getElementById("mobile-hamburger-menu")
-hamButton = document.getElementById("mobile-hamburger-menu-button")
+var recordedTopScroll = 0
+let hamMenu = document.getElementById("mobile-hamburger-menu")
+let hamButton = document.getElementById("mobile-hamburger-menu-button")
 hamButton.onclick = function () {
     if (!hamButton.classList.contains("active")) {
         recordedTopScroll = document.documentElement.scrollTop
@@ -21,3 +21,14 @@ hamButton.onclick = function () {
     }
 
 }
+
+import anime from './anime.es.js';
+
+anime({
+    targets: '.staggering-grid-demo .el',
+    scale: [
+      {value: .1, easing: 'easeOutSine', duration: 500},
+      {value: 1, easing: 'easeInOutQuad', duration: 1200}
+    ],
+    delay: anime.stagger(200, {grid: [14, 5], from: 'center'})
+  });

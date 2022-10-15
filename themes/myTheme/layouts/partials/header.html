@@ -4,8 +4,13 @@
             <div class="navbar-logo">
                 <img src="/images/can_logo.svg" alt="" width="48px" height="48px">
             </div>
+            {{ $menu := .Site.Menus.navbar }}
+            {{ $len := len $menu}}
             <div id="navbar-menu">
-                [ <a href="/index.html">Home</a> | <a href="/vulns">Vulns</a> | <a href="LINK_TO_GITHUB">GitHub</a> ]
+                [ {{ range $index, $element := $menu }}
+                <a href="{{ .URL }}" >{{ .Name }}</a>
+                {{if not (eq (add $index 1) $len)}} | {{ end }}
+                {{ end }}]
             </div>
             <div id=navbar-flex-align></div>
         </div>
@@ -19,11 +24,14 @@
             <div id="mobile-hamburger-menu-button">v</div>
         </div>
     </div>
+    {{ $menu := .Site.Menus.navbar }}
+    {{ $len := len $menu}}
+
     <div id="mobile-hamburger-menu">
         <div id="mobile-hamburger-menu-list">
-            <div class="mobile-hamburger-item"><a href="/index.html">Home</a></div>
-            <div class="mobile-hamburger-item"><a href="/vulns-view.html">Vulns</a></div>
-            <div class="mobile-hamburger-item"><a href="LINK_TO_GITHUB">GitHub</a></div>
+            {{ range $index, $element := $menu }}
+            <div class="mobile-hamburger-item"><a href="{{ .URL }}">{{ .Name }}</a></div>
+            {{ end }}
         </div>
     </div>
 </nav>
