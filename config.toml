@@ -19,7 +19,7 @@ navbarIcon = "favicon.svg"
     weight = 2
 [[menu.navbar]]
     name = "Github"
-    url = "/GITHUB_LINK"
+    url = "/droptopx"
     weight = 3
 [[menu.navbar]]
     name = "Contact"
