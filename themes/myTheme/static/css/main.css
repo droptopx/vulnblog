@@ -747,3 +747,9 @@ a.colored-link {
   height: 100%;
   margin: auto;
 }
+
+@media screen and (max-width: 1400px) {
+  .big-greeting{
+    flex-direction: column-reverse;
+  }
+}
