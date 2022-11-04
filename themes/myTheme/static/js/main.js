@@ -22,7 +22,7 @@ hamButton.onclick = function () {
 
 }
 
-import anime from './anime.es.js';
+/*import anime from './anime.es.js';
 
 anime({
     targets: '.staggering-grid-demo .el',
@@ -31,4 +31,4 @@ anime({
       {value: 1, easing: 'easeInOutQuad', duration: 1200}
     ],
     delay: anime.stagger(200, {grid: [14, 5], from: 'center'})
-  });
+  });*/
