@@ -4,8 +4,8 @@ title = 'Can Acar'
 theme = 'myTheme'
 
 [Params]
-favicon = "favicon.svg"
-navbarIcon = "favicon.svg"
+favicon = "/images/favicon.svg"
+navbarIcon = "/images/favicon.svg"
 
 # Navigation Bar
 [menu]
