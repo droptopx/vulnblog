@@ -172,7 +172,7 @@ main {
 .writeup-image figcaption {
   word-break: break-all;
   text-align: justify;
-  /* damit text-align-last isnt supported on safari, cmon apple */
+  /* supported by safari 16 */
   text-align-last: center;
   opacity: 80%;
   font-size: 80%;
@@ -637,8 +637,8 @@ a.colored-link {
   color: var(--navbar-link-color);
 }
 
-.colored-link:hover{
-  color: var(--link-hover-color)
+.colored-link:hover {
+  color: var(--link-hover-color);
 }
 
 .center-flex {
@@ -681,7 +681,6 @@ a.colored-link {
 
 .big-greeting {
   display: flex;
-  
 }
 
 .bio {
@@ -691,13 +690,17 @@ a.colored-link {
   flex: 1;
 }
 
-.medium-greeting{
+.medium-greeting {
   color: white;
-  font-size: 2em; 
+  font-size: 2em;
 }
 
 .flex-item {
   flex: 1;
+}
+
+.align-center {
+  align-items: center;
 }
 
 /* WARNING: SCUFFED IMAGE SCALE OUT HERE */
@@ -706,7 +709,7 @@ a.colored-link {
   margin: 0 auto;
   width: 200px;
   height: 200px;
-  flex: 1;
+  flex: 0.4;
 }
 
 .drop-shadow {
@@ -748,8 +751,16 @@ a.colored-link {
   margin: auto;
 }
 
-@media screen and (max-width: 1400px) {
-  .big-greeting{
+@media screen and (max-width: 960px) {
+  .big-greeting {
     flex-direction: column-reverse;
+  }
+
+  .bio {
+    font-size: 8vw;
+  }
+
+  .medium-greeting {
+    font-size: 3.5vw;
   }
 }

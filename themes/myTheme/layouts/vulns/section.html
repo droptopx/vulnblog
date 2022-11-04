@@ -7,7 +7,7 @@
         <ul id="writeups-list" class="no-bullets">  
             {{ range .Pages }}  
             <li class="writeups-list-item">=>
-                <a href="{{ .RelPermalink }}" class="vuln-writeup-link">{{ .Title }}</a>
+                <a href="{{ .RelPermalink }}" class="vuln-writeup-link">{{ .Title }} - {{ .Date.Format "01/2006" }}</a>
             </li>  
             {{ end }}  
         </ul>  
