@@ -1,3 +1,4 @@
-content/
+content/vulns/*
+!content/vulns/_index.md
 /static_testing/
 public/

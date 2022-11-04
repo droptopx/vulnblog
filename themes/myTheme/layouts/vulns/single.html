@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div id="writeup-container">
+    <div id="writeup-header-container">
+        <div id="writeup-header-date">{{ .Date.Format "02 Jan 2006" }}</div>
+        <div id="writeup-header-title">
+            {{ .Title }}
+        </div>
+        <div id="writeup-header-end"></div>
+    </div>
+    <div id="writeup-body-2">
+        {{.Content}}
+    </div>
+</div>
+
+{{ end }}
