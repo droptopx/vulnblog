@@ -14,14 +14,10 @@ navbarIcon = "/images/favicon.svg"
     url = "/"
     weight = 1
 [[menu.navbar]]
-    name = "Vulns"
-    url = "/vulns"
+    name = "Blog"
+    url = "/blog"
     weight = 2
 [[menu.navbar]]
     name = "Github"
     url = "https://github.com/droptopx"
-    weight = 3
-[[menu.navbar]]
-    name = "Contact"
-    url = "/contact"
     weight = 4

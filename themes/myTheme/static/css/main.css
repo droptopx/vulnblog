@@ -40,6 +40,7 @@
   /*--body-gradient-color-1: #292a2d;*/
   --body-gradient-color-1: #27282c;
   --navbar-link-color: #ff9e00;
+  --default-link-color: #ff9e00;
   --navbar-color: #252627;
   --console-prompt-color: #ff7900;
   --social-link-color: #ff9e00;
@@ -55,6 +56,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html {
+  /* I spent way too much time to find this reset, necessary for consistent code blocks */
+  /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 body {
@@ -144,7 +151,8 @@ main {
   /* font-weight: 400; */
   /* text-align: justify; */
   /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
-  font-family: "Segoe UI", monospace;
+  /* font-family: "Segoe UI", monospace; */
+  font-family: "Noto Sans", sans-serif;
   line-height: 1.25em;
   margin-bottom: 2em;
 }
@@ -153,10 +161,10 @@ main {
   text-align: start;
 }
 
-.math {
+/*.math {
   font-family: "Noto Sans Math", sans-serif !important;
   font-size: 0.7em;
-}
+}*/
 
 .writeup-image {
   text-align: center;
@@ -172,11 +180,14 @@ main {
 .writeup-image figcaption {
   word-break: break-all;
   text-align: justify;
-  /* supported by safari 16 */
+  /* finally supported by safari 16 */
   text-align-last: center;
   opacity: 80%;
-  font-size: 80%;
   padding: 0;
+}
+.writeup-image figcaption p {
+  margin: 0;
+  font-size: 80%;
 }
 
 @media screen and (max-width: 960px) {
@@ -241,7 +252,7 @@ main {
 }
 
 #mobile-navbar {
-  background-color: var(--navbar-color);
+
   display: none;
   padding: 0 5% 0 5%;
   z-index: 9000;
@@ -259,7 +270,8 @@ main {
   vertical-align: middle;
 }
 
-@media screen and (max-width: 480px) {
+/* this should be 480px, figure out a way to use config.toml variables to somehow change into mobile navbar after cutoff */
+@media screen and (max-width: 512px) {
   #mobile-hamburger-menu {
     display: block !important;
     width: 100%;
@@ -267,6 +279,7 @@ main {
     overflow: hidden;
     justify-content: center;
     z-index: 500;
+    /* I can't remember where I got this curve from, but I will give credit if I find the original author */
     transition: height 600ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
   }
 
@@ -285,6 +298,15 @@ main {
 
   #mobile-hamburger-menu-button.active {
     transform: rotate(180deg);
+  }
+
+  #mobile-navbar{
+    transition: background-color 0.6s ease-in;
+    
+  }
+
+  #mobile-navbar.active{
+    background-color: var(--navbar-color);
   }
 
   #console-view {
@@ -323,9 +345,9 @@ main {
   #mobile-navbar {
     display: block !important;
   }
-  html.no-scroll {
-    overflow: hidden !important;
-    /* position:fixed is needed due to a bug in mobile height:100vh also fixes it but its buggy, this works better*/
+
+  body.no-scroll {
+    /* position:fixed is needed due to a bug in mobile safari. height:100vh; overflow:hidden; also kind of works but it's buggy, this works better.*/
     position: fixed;
   }
 }
@@ -475,8 +497,8 @@ li.writeups-list-item:hover {
 
   /* From https://css.glass */
   background: rgba(37, 38, 39, 0.45);
-  backdrop-filter: blur(10.5px);
-  -webkit-backdrop-filter: blur(10.5px);
+  backdrop-filter: saturate(100%) blur(10px);
+  -webkit-backdrop-filter: saturate(100%) blur(10px);
 
   /* backdrop-filter: blur(40px); */
   align-items: center;
@@ -529,6 +551,7 @@ nav + main::before {
 
 #navbar-menu a {
   color: var(--navbar-link-color);
+  /* padding: 0 1%; */
 }
 
 #navbar-menu a:hover {
@@ -563,7 +586,7 @@ nav + main::before {
   font-weight: 550;
 }
 
-.social-link {
+.social-profile-link {
   color: var(--social-link-color);
 }
 
@@ -575,7 +598,7 @@ nav + main::before {
   word-break: break-all;
 }
 
-code {
+:not(pre) > code {
   color: #eee;
   font-size: 90%;
   background: #333;
@@ -591,6 +614,7 @@ ol {
 
 ::-webkit-scrollbar {
   width: 10px;
+  height: 15px;
 }
 
 ::-webkit-scrollbar-track {
@@ -634,7 +658,7 @@ ol {
 }
 
 a.colored-link {
-  color: var(--navbar-link-color);
+  color: var(--default-link-color);
 }
 
 .colored-link:hover {
@@ -655,7 +679,8 @@ a.colored-link {
 }
 
 .homepage-content {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: "Noto Sans", sans-serif;
   margin-top: 2%;
   margin-left: 10%;
   margin-right: 10%;
@@ -692,7 +717,7 @@ a.colored-link {
 
 .medium-greeting {
   color: white;
-  font-size: 2em;
+  font-size: 1.6em;
 }
 
 .flex-item {
@@ -703,13 +728,20 @@ a.colored-link {
   align-items: center;
 }
 
-/* WARNING: SCUFFED IMAGE SCALE OUT HERE */
+/* WARNING: NO MORE SCUFFED IMAGE SCALE OUT HERE */
+/* LETS GO */
+/* OUT HERE AT 1:30 AM */
+/* THIS IS JUST DECREASING SEO VIABILITY AT THIS POINT */
 #homepage-logo {
-  display: block;
-  margin: 0 auto;
-  width: 200px;
-  height: 200px;
   flex: 0.4;
+  align-self: stretch;
+}
+
+#homepage-logo img {
+  height: 100%;
+  margin: 0 0 0 auto;
+
+  display: block;
 }
 
 .drop-shadow {
@@ -756,6 +788,11 @@ a.colored-link {
     flex-direction: column-reverse;
   }
 
+  #homepage-logo img {
+    margin: auto;
+    min-height: 200px;
+  }
+
   .bio {
     font-size: 8vw;
   }
@@ -763,4 +800,17 @@ a.colored-link {
   .medium-greeting {
     font-size: 3.5vw;
   }
+}
+
+.highlight {
+  margin: 0.5em 0;
+}
+
+/* https://github.com/gohugoio/hugo/issues/7326*/
+.highlight div,
+.highlight pre {
+  overflow-x: auto;
+}
+.highlight pre code {
+  display: inline-block;
 }

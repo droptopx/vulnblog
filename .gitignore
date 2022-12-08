@@ -1,4 +1,6 @@
-content/vulns/*
-!content/vulns/_index.md
+content/blog/*
+!content/blog/_index.md
+!content/blog/welcome.md
+
 /static_testing/
 public/

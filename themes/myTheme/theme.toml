@@ -3,7 +3,7 @@
 
 name = "MyTheme"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+licenselink = "https://github.com/droptopx/vulnblog/themes/myTheme/LICENSE"
 description = ""
 homepage = "http://example.com/"
 tags = []
@@ -11,8 +11,8 @@ features = []
 min_version = "0.41.0"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "imcan"
+  homepage = "https://imcan.dev"
 
 # If porting an existing theme
 [original]

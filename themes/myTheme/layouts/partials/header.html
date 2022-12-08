@@ -7,10 +7,10 @@
             {{ $menu := .Site.Menus.navbar }}
             {{ $len := len $menu}}
             <div id="navbar-menu">
-                [ {{ range $index, $element := $menu }}
+                <!--[--> {{ range $index, $element := $menu -}}
                 <a href="{{ .URL }}" >{{ .Name }}</a>
-                {{if not (eq (add $index 1) $len)}} | {{ end }}
-                {{ end }}]
+                {{- if not (eq (add $index 1) $len) }} /// {{ end -}}
+                {{ end }}<!--]-->
             </div>
             <div id=navbar-flex-align></div>
         </div>

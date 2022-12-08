@@ -1,7 +1,7 @@
 {{ define "main" }}  
 <div>
     <div id=introduction>
-        ./vulns-view
+        ./{{trim .Page.RelPermalink "/"}}
     </div>
     <div id=writeups-list-container>
         <ul id="writeups-list" class="no-bullets">  
