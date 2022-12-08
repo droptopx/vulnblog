@@ -1,6 +1,6 @@
 content/blog/*
 !content/blog/_index.md
-!content/blog/welcome.md
+!content/blog/welcome-to-my-blog.md
 
 /static_testing/
 public/
