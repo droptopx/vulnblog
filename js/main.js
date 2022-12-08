@@ -1,26 +1,27 @@
-var recordedTopScroll = 0
-let hamMenu = document.getElementById("mobile-hamburger-menu")
-let hamButton = document.getElementById("mobile-hamburger-menu-button")
+var recordedTopScroll = 0;
+let hamMenu = document.getElementById("mobile-hamburger-menu");
+let hamButton = document.getElementById("mobile-hamburger-menu-button");
+let mobileNavBar = document.getElementById("mobile-navbar");
 hamButton.onclick = function () {
-    if (!hamButton.classList.contains("active")) {
-        recordedTopScroll = document.documentElement.scrollTop
-    }
-    hamButton.classList.toggle("active");
-    hamMenu.classList.toggle("active");
+  if (!hamButton.classList.contains("active")) {
+    recordedTopScroll = document.documentElement.scrollTop;
+  }
+  hamButton.classList.toggle("active");
+  hamMenu.classList.toggle("active");
+  mobileNavBar.classList.toggle("active");
+  setTimeout(function () {
     if (hamButton.classList.contains("active")) {
-        setTimeout(function () {
-            document.body.classList.toggle("no-scroll");
-            document.documentElement.classList.toggle("no-scroll");
-        }, 600
-        )
+      document.body.classList.add("no-scroll");
+      //document.documentElement.classList.toggle("no-scroll");
     }
-    else {
-        document.body.classList.toggle("no-scroll");
-        document.documentElement.classList.toggle("no-scroll");
-        document.documentElement.scrollTop = recordedTopScroll
-    }
+  }, 600);
 
-}
+  if (!hamButton.classList.contains("active")) {
+    document.body.classList.remove("no-scroll");
+    //document.documentElement.classList.toggle("no-scroll");
+    document.documentElement.scrollTop = recordedTopScroll;
+  }
+};
 
 /*import anime from './anime.es.js';
 
