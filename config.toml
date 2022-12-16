@@ -4,7 +4,9 @@ title = 'Can Acar'
 theme = 'myTheme'
 
 [Params]
-favicon = "/images/favicon.svg"
+favicon_svg = "/images/favicon.svg"
+favicon_ico = "/images/favicon.ico"
+apple_touch_icon = "/images/apple-touch-icon.png"
 navbarIcon = "/images/favicon.svg"
 
 # Navigation Bar
