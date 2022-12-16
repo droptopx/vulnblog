@@ -2,10 +2,10 @@
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
 name = "MyTheme"
-license = "MIT"
+license = ""
 licenselink = "https://github.com/droptopx/vulnblog/themes/myTheme/LICENSE"
-description = ""
-homepage = "http://example.com/"
+description = "Custom theme for my blog"
+homepage = ""
 tags = []
 features = []
 min_version = "0.41.0"
@@ -15,7 +15,7 @@ min_version = "0.41.0"
   homepage = "https://imcan.dev"
 
 # If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
+# [original]
+#   name = ""
+#   homepage = ""
+#   repo = ""
