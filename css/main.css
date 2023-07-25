@@ -80,6 +80,20 @@ body {
   /* background:repeating-linear-gradient( 135deg, var(--body-gradient-color-1), var(--body-gradient-color-1) 0.4%, #000 0.5%, #000 0.51%); */
 }
 
+hr {
+  border-color:#606060;
+  /*margin-bottom: 0.5em;*/
+}
+
+h2{
+  margin-bottom: 0.25em;
+  margin-top: 1em;
+}
+
+h3 {
+  margin:1em auto 1em auto;
+}
+
 p {
   margin: 1em auto;
   box-sizing: border-box;
@@ -608,6 +622,7 @@ nav + main::before {
 }
 
 ol {
+  margin: 1em auto;
   padding-left: 2em;
   list-style-type: decimal;
 }
