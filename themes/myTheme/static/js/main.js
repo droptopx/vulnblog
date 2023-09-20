@@ -1,4 +1,12 @@
-var recordedTopScroll = 0;
+let highlightedCodeBlocks = document.getElementsByClassName("highlight");
+for (let i =0 ; i<highlightedCodeBlocks.length; i++) {
+  console.log(highlightedCodeBlocks[i], i);
+  highlightedCodeBlocks[i].classList.toggle("highlight");
+  highlightedCodeBlocks[i].classList.toggle("highlight");
+  //console.log(highlightedCodeBlocks[i].classList)
+}
+
+let recordedTopScroll = 0;
 let hamMenu = document.getElementById("mobile-hamburger-menu");
 let hamButton = document.getElementById("mobile-hamburger-menu-button");
 let mobileNavBar = document.getElementById("mobile-navbar");
