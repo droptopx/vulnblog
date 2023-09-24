@@ -1,8 +1,8 @@
 let highlightedCodeBlocks = document.getElementsByClassName("highlight");
-for (let i =0 ; i<highlightedCodeBlocks.length; i++) {
-  console.log(highlightedCodeBlocks[i], i);
-  highlightedCodeBlocks[i].classList.toggle("highlight");
-  highlightedCodeBlocks[i].classList.toggle("highlight");
+console.log(highlightedCodeBlocks);
+for (const element of highlightedCodeBlocks) {
+  element.classList.toggle("highlight");
+  element.classList.toggle("highlight");
   //console.log(highlightedCodeBlocks[i].classList)
 }
 
